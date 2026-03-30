@@ -11,6 +11,10 @@ Place the fountain engine v1 documentation PDF here:
 
 After adding the file, commit and push; the link on the site will work.
 
+## Engine and scheme handbooks (from the monorepo)
+
+The PDFs `docs/doc-engine.pdf` and `docs/doc-scheme.pdf` are generated from Org sources in the main library repository. From that repo’s root, run `scripts/sync_fountain_docs_pdfs.sh` (see that script for prerequisites). It exports the Org files to PDF, copies them here, and commits this repository.
+
 ## GitHub Pages
 
 1. In this repo: **Settings → Pages**.
