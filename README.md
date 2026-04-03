@@ -1,17 +1,26 @@
 <<<<<<< Updated upstream
 # Fountain docs
+<<<<<<< HEAD
 
 Brief introduction site for the [Fountain library project](https://github.com/shhyang/fountain_engine).
 =======
 # Fountain Library Project (docs site)
 >>>>>>> Stashed changes
+=======
+ 
+Brief introduction site for the [Fountain library project], published on (https://github.com/shhyang/fountain_docs).
+>>>>>>> main
 
 Static site for the [Fountain library project](https://github.com/shhyang/fountain_docs): Rust crates for fountain codes and erasure-coding schemes—a reusable engine, schemes (LT and Raptor-style), and utilities for testing and benchmarking.
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 Place the fountain engine v1 documentation PDF here:
+=======
+Place the documentation PDF here:
+>>>>>>> main
 
-- **Path:** `docs/engine_v1.pdf`
+- **Path:** `docs/doc-engine.pdf`
 - The front page links to it as "Fountain engine v1 documentation (PDF)".
 =======
 Live site (GitHub Pages): `https://shhyang.github.io/fountain_docs/` (or `https://<username>.github.io/fountain_docs/` after you enable Pages).
