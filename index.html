@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fountain library project</title>
+  <title>Fountain Library Project</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <main>
-    <h1>Fountain library project</h1>
+    <h1>Fountain Library Project</h1>
 
     <p>
       The fountain library project is a collection of Rust crates for building and analyzing
       fountain codes and related erasure-coding schemes. It provides a reusable engine for
-      encoding and decoding, code schemes (LT, LDPC, HDPC, Raptor-style codes), and
+      encoding and decoding, code schemes (LT and Raptor-style codes), and
       utilities for testing and benchmarking.
     </p>
 
-    <h2>Published crates</h2>
+    <h2>Published Crates</h2>
     <ul>
       <li>
         <strong>fountain_engine</strong> — Core fountain code engine<br>
@@ -32,22 +32,24 @@
       <li>
         <strong>fountain_scheme</strong> — Configurable schemes (LT, LDPC-LT, HDPC-LT, systematic) on <code>fountain_engine</code><br>
         <a href="https://crates.io/crates/fountain_scheme">Crates.io</a> ·
-        <a href="https://github.com/shhyang/fountain_scheme">GitHub</a> ·
+        <a href="https://github.com/shhyang/fountain_scheme">GitHub</a>
       </li>
     </ul>
     <p>
       Additional crates (<code>raptor_10</code>, <code>raptor_q</code>) may be published as the ecosystem evolves.
     </p>
 
-    <h2>Fountain library project documentation</h2>
+    <h2>Project Documentation</h2>
     <p>
-      The usage of <code>fountain_engine</code>, <code>fountain_utility</code>, and <code>fountain_scheme</code>
-      is described in the following documents. 
+      The usage of <code>fountain_engine</code>, <code>fountain_utility</code>, and <code>fountain_scheme</code> is described in the following documents. 
     </p>
     <ul>
       <li><a href="docs/doc-engine.pdf">Fountain engine and utility usage (PDF)</a></li>
       <li><a href="docs/doc-scheme.pdf">Fountain code scheme introduction (PDF)</a></li>
     </ul>
+
+    <h2>Getting Started</h2>
+    <p>Try the examples and tests provided in <code>fountain_scheme</code>. </p>
   </main>
 </body>
 </html>
