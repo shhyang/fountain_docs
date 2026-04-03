@@ -1,12 +1,12 @@
 # Fountain docs
-
-Brief introduction site for the [Fountain library project](https://github.com/shhyang/fountain_engine).
+ 
+Brief introduction site for the [Fountain library project], published on (https://github.com/shhyang/fountain_docs).
 
 ## Add the engine PDF
 
-Place the fountain engine v1 documentation PDF here:
+Place the documentation PDF here:
 
-- **Path:** `docs/engine_v1.pdf`
+- **Path:** `docs/doc-engine.pdf`
 - The front page links to it as "Fountain engine v1 documentation (PDF)".
 
 After adding the file, commit and push; the link on the site will work.
