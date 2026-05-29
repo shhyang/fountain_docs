@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rust fountain-code libraries: engine, configurable schemes, operators, and RFC 6330/5053 Raptor implementations.">
   <title>Fountain Library Project</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -10,46 +11,86 @@
   <main>
     <h1>Fountain Library Project</h1>
 
+    <p class="note">
+      Rust fountain-code libraries: engine, schemes, operators, and RFC Raptor implementations.
+      <a href="https://shhyang.github.io/fountain_docs/">Live site</a>
+    </p>
+
     <p>
       The fountain library project is a collection of Rust crates for building and analyzing
       fountain codes and related erasure-coding schemes. It provides a reusable engine for
-      encoding and decoding, code schemes (LT and Raptor-style codes), and
+      encoding and decoding, configurable schemes (LT and Raptor-style codes), and
       utilities for testing and benchmarking.
     </p>
 
+    <h2>Getting Started</h2>
+    <ol>
+      <li>Add <code>fountain_engine</code> plus one scheme crate (for example <code>fountain_scheme</code>, <code>fountain_raptor_q</code>, or <code>fountain_raptor_10</code>) to your <code>Cargo.toml</code>.</li>
+      <li>Run <code>cargo test</code> in that crate’s repository, or follow the quick-start example on its docs.rs page.</li>
+      <li>Read <a href="docs/doc-engine.pdf">doc-engine.pdf</a> for engine and operator concepts, or <a href="docs/doc-scheme.pdf">doc-scheme.pdf</a> for building custom schemes.</li>
+    </ol>
+
     <h2>Published Crates</h2>
+
+    <h3>Core</h3>
     <ul>
       <li>
         <strong>fountain_engine</strong> — Core fountain code engine<br>
         <a href="https://crates.io/crates/fountain_engine">Crates.io</a> ·
         <a href="https://github.com/shhyang/fountain_engine">GitHub</a>
       </li>
+    </ul>
+
+    <h3>Utility</h3>
+    <ul>
       <li>
         <strong>fountain_utility</strong> — Data operators and testing utilities<br>
         <a href="https://crates.io/crates/fountain_utility">Crates.io</a> ·
         <a href="https://github.com/shhyang/fountain_utility">GitHub</a>
       </li>
+    </ul>
+
+    <h3>Schemes</h3>
+    <ul>
       <li>
-        <strong>fountain_scheme</strong> — Configurable fountain code schemes based on <code>fountain_engine</code><br>
+        <strong>fountain_scheme</strong> — Configurable fountain code schemes on <code>fountain_engine</code><br>
+        <a href="https://docs.rs/fountain_scheme">docs.rs</a> ·
         <a href="https://crates.io/crates/fountain_scheme">Crates.io</a> ·
         <a href="https://github.com/shhyang/fountain_scheme">GitHub</a>
       </li>
+      <li>
+        <strong>fountain_raptor_q</strong> — RFC 6330 RaptorQ scheme on <code>fountain_engine</code><br>
+        <a href="https://docs.rs/fountain_raptor_q">docs.rs</a> ·
+        <a href="https://crates.io/crates/fountain_raptor_q">Crates.io</a> ·
+        <a href="https://github.com/wutongabc/fountain_raptor_q">GitHub</a>
+      </li>
+      <li>
+        <strong>fountain_raptor_10</strong> — RFC 5053 Raptor-10 scheme on <code>fountain_engine</code><br>
+        <a href="https://docs.rs/fountain_raptor_10">docs.rs</a> ·
+        <a href="https://crates.io/crates/fountain_raptor_10">Crates.io</a> ·
+        <a href="https://github.com/wutongabc/fountain_raptor_10">GitHub</a>
+      </li>
     </ul>
-    <p>
-      Additional crates (<code>raptor_10</code>, <code>raptor_q</code>) may be published as the ecosystem evolves.
-    </p>
+
+    <h3>More</h3>
+
+    <p>More crates may be published as the ecosystem evolves, including: data operators, transport tools, etc.</p>
 
     <h2>Project Documentation</h2>
     <p>
-      The usage of <code>fountain_engine</code>, <code>fountain_utility</code>, and <code>fountain_scheme</code> is described in the following documents. 
+      PDF guides for the engine and scheme-building workflow. Raptor scheme crates also publish API docs on docs.rs (links above).
     </p>
-    <ul>
+    <ul class="doc-list">
       <li><a href="docs/doc-engine.pdf">Fountain engine and utility usage (PDF)</a></li>
       <li><a href="docs/doc-scheme.pdf">Fountain code scheme building introduction and examples (PDF)</a></li>
     </ul>
 
-    <h2>Getting Started</h2>
-    <p>Try the examples and tests provided in <code>fountain_scheme</code>. </p>
+
+    <h2>Contributors</h2>
+    <ul>
+      <li>Shenghao Yang</li>
+      <li>Zigeng Xu</li>
+    </ul>
   </main>
 </body>
 </html>
