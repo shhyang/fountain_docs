@@ -26,6 +26,7 @@
     <h2>Getting Started</h2>
     <ol>
       <li>Add <code>fountain_engine</code> plus one scheme crate (for example <code>fountain_scheme</code>, <code>fountain_raptor_q</code>, or <code>fountain_raptor_10</code>) to your <code>Cargo.toml</code>.</li>
+      <li>Optional: add <strong>experimental</strong> <code>fountain_operators</code> from <a href="https://github.com/shhyang/fountain_operators">GitHub</a> for high-performance slab/SIMD <code>DataOperator</code> backends (requires <code>fountain_engine</code> 1.3+).</li>
       <li>Run <code>cargo test</code> in that crate’s repository, or follow the quick-start example on its docs.rs page.</li>
       <li>Read <a href="docs/doc-engine.pdf">doc-engine.pdf</a> for engine and operator concepts, or <a href="docs/doc-scheme.pdf">doc-scheme.pdf</a> for building custom schemes.</li>
     </ol>
@@ -44,11 +45,28 @@
     <h3>Utility</h3>
     <ul>
       <li>
-        <strong>fountain_utility</strong> — Data operators and testing utilities<br>
+        <strong>fountain_utility</strong> — In-memory operators, padding wrappers, and testing utilities<br>
+        <a href="https://docs.rs/fountain_utility">docs.rs</a> ·
         <a href="https://crates.io/crates/fountain_utility">Crates.io</a> ·
         <a href="https://github.com/shhyang/fountain_utility">GitHub</a>
       </li>
     </ul>
+
+    <h3>Operators</h3>
+    <ul>
+      <li>
+        <strong>fountain_operators</strong> — <em>Experimental.</em> High-performance <code>DataOperator</code> implementations
+        (<code>SlabDataOperator</code>, <code>SimdDataOperator</code>, GF(256) block kernels, replay/testing helpers).
+        API and performance characteristics may change. Distributed via GitHub only (not on Crates.io); depends on <code>fountain_engine</code> 1.3+.<br>
+        <a href="https://github.com/shhyang/fountain_operators">GitHub</a>
+        · <a href="https://github.com/shhyang/fountain_operators#usage">README</a>
+      </li>
+    </ul>
+    <p class="note">
+      Add to <code>Cargo.toml</code> with a Git dependency, for example:
+      <code>fountain_operators = { git = "https://github.com/shhyang/fountain_operators", features = ["simd"] }</code>.
+      Enable the <code>simd</code> feature for AVX2 (x86_64) or NEON (aarch64) kernel dispatch.
+    </p>
 
     <h3>Schemes</h3>
     <ul>
@@ -74,7 +92,7 @@
 
     <h3>More</h3>
 
-    <p>More crates may be published as the ecosystem evolves, including: data operators, transport tools, etc.</p>
+    <p>Additional tooling (transport, profiling, etc.) may appear as the ecosystem evolves.</p>
 
     <h2>Project Documentation</h2>
     <p>
