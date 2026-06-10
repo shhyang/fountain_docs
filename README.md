@@ -29,7 +29,7 @@ fountain_engine = "1.3"
 fountain_operators = { git = "https://github.com/shhyang/fountain_operators", features = ["simd"] }
 ```
 
-Raptor performance examples (`raptor_q_performance`, `raptor_10_performance`) use `fountain_operators` as an optional **dev-dependency** with the same Git URL.
+Raptor performance examples (`raptor_q_performance`, `raptor_10_performance`) use `fountain_operators` as an optional **dev-dependency** with the same Git URL. See the [operators README](https://github.com/shhyang/fountain_operators#end-to-end-examples-raptor-crates) for run commands.
 
 ## Project documentation (PDFs)
 
