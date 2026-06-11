@@ -2,9 +2,16 @@
 
 Maintainer notes for the [Fountain library project](https://github.com/shhyang/fountain_docs) static site. The public landing page is [`index.html`](index.html) (mirrors the content visitors see on GitHub Pages).
 
-Rust crates for fountain codes and erasure-coding schemes: a reusable engine, schemes (LT and Raptor-style), utilities for testing and benchmarking, and optional high-performance operators.
+Rust crates for fountain codes: a reusable engine, schemes (LT and Raptor-style), utilities for testing and benchmarking, optional high-performance operators, and rateless UDP file transfer (`fountain_transfer`).
 
 **Live site:** [https://shhyang.github.io/fountain_docs/](https://shhyang.github.io/fountain_docs/)
+
+## Getting started (same as the front page)
+
+1. Add `fountain_engine` plus one scheme crate (`fountain_scheme`, `fountain_raptor_q`, or `fountain_raptor_10`) to your `Cargo.toml`.
+2. Optional: add experimental `fountain_operators` from GitHub (requires `fountain_engine` 1.3+).
+3. Try `fountain_transfer` for rateless UDP file transfer ([quick start](https://github.com/shhyang/fountain_transfer#quick-start)).
+4. Read `docs/doc-engine.pdf` and `docs/doc-scheme.pdf` (paths match [`index.html`](index.html)).
 
 ## Published crates (same as the front page)
 
@@ -21,6 +28,7 @@ Rust crates for fountain codes and erasure-coding schemes: a reusable engine, sc
 | Crate | Role | Distribution | GitHub |
 |-------|------|--------------|--------|
 | **fountain_operators** | **Experimental.** High-performance `DataOperator` backends (`SlabDataOperator`, `SimdDataOperator`, GF(256) kernels, replay/testing). API may change. Requires `fountain_engine` **1.3+**. | Git dependency (not on Crates.io) | [shhyang/fountain_operators](https://github.com/shhyang/fountain_operators) |
+| **fountain_transfer** | Rateless UDP file transfer: `fountain_transfer_core` library (dual-codec facade, RFC packet codec) + `fountain` CLI (`send` / `recv`). MIT; links AGPL `fountain_engine` in-process. | GitHub workspace (not on Crates.io yet) | [shhyang/fountain_transfer](https://github.com/shhyang/fountain_transfer) |
 
 Example dependency (from the [operators README](https://github.com/shhyang/fountain_operators#usage)):
 
@@ -30,6 +38,8 @@ fountain_operators = { git = "https://github.com/shhyang/fountain_operators", fe
 ```
 
 Raptor performance examples (`raptor_q_performance`, `raptor_10_performance`) use `fountain_operators` as an optional **dev-dependency** with the same Git URL. See the [operators README](https://github.com/shhyang/fountain_operators#end-to-end-examples-raptor-crates) for run commands.
+
+Clone [fountain_transfer](https://github.com/shhyang/fountain_transfer) for loopback UDP transfer (`fountain send` / `fountain recv`); see its [README quick start](https://github.com/shhyang/fountain_transfer#quick-start).
 
 ## Project documentation (PDFs)
 

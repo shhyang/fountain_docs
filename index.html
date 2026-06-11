@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Rust fountain-code libraries: engine, configurable schemes, operators, and RFC 6330/5053 Raptor implementations.">
+  <meta name="description" content="Rust fountain-code libraries: engine, schemes, operators, RFC Raptor implementations, and UDP file transfer.">
   <title>Fountain Library Project</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -12,13 +12,14 @@
     <h1>Fountain Library Project</h1>
 
     <p class="note">
-      Rust fountain-code libraries: engine, schemes, operators, and RFC Raptor implementations.
+      Rust crates for fountain codes: engine, schemes (LT and Raptor-style),
+      utilities, optional high-performance operators, RFC Raptor implementations, and rateless UDP file transfer.
       <a href="https://shhyang.github.io/fountain_docs/">Live site</a>
     </p>
 
     <p>
       The fountain library project is a collection of Rust crates for building and analyzing
-      fountain codes and related erasure-coding schemes. It provides a reusable engine for
+      fountain codes. It provides a reusable engine for
       encoding and decoding, configurable schemes (LT and Raptor-style codes), and
       utilities for testing and benchmarking.
     </p>
@@ -26,8 +27,7 @@
     <h2>Getting Started</h2>
     <ol>
       <li>Add <code>fountain_engine</code> plus one scheme crate (for example <code>fountain_scheme</code>, <code>fountain_raptor_q</code>, or <code>fountain_raptor_10</code>) to your <code>Cargo.toml</code>.</li>
-      <li>Optional: add <strong>experimental</strong> <code>fountain_operators</code> from <a href="https://github.com/shhyang/fountain_operators">GitHub</a> for high-performance slab/SIMD <code>DataOperator</code> backends (requires <code>fountain_engine</code> 1.3+).</li>
-      <li>Run <code>cargo test</code> in that crate’s repository, or follow the quick-start example on its docs.rs page.</li>
+      <li>Try <code>fountain_transfer</code> for rateless UDP file transfer.</li>
       <li>Read <a href="docs/doc-engine.pdf">doc-engine.pdf</a> for engine and operator concepts, or <a href="docs/doc-scheme.pdf">doc-scheme.pdf</a> for building custom schemes.</li>
     </ol>
 
@@ -46,7 +46,6 @@
     <ul>
       <li>
         <strong>fountain_utility</strong> — In-memory operators, padding wrappers, and testing utilities<br>
-        <a href="https://docs.rs/fountain_utility">docs.rs</a> ·
         <a href="https://crates.io/crates/fountain_utility">Crates.io</a> ·
         <a href="https://github.com/shhyang/fountain_utility">GitHub</a>
       </li>
@@ -55,44 +54,45 @@
     <h3>Operators</h3>
     <ul>
       <li>
-        <strong>fountain_operators</strong> — <em>Experimental.</em> High-performance <code>DataOperator</code> implementations
-        (<code>SlabDataOperator</code>, <code>SimdDataOperator</code>, GF(256) block kernels, replay/testing helpers).
-        API and performance characteristics may change. Distributed via GitHub only (not on Crates.io); depends on <code>fountain_engine</code> 1.3+.<br>
+        <strong>fountain_operators</strong> — <em>Experimental.</em> High-performance <code>DataOperator</code> backends
+        (<code>SlabDataOperator</code>, <code>SimdDataOperator</code>, GF(256) kernels, replay/testing). API may change.
+        Requires <code>fountain_engine</code> 1.3+.<br>
         <a href="https://github.com/shhyang/fountain_operators">GitHub</a>
         · <a href="https://github.com/shhyang/fountain_operators#usage">README</a>
       </li>
     </ul>
-    <p class="note">
-      Add to <code>Cargo.toml</code> with a Git dependency, for example:
-      <code>fountain_operators = { git = "https://github.com/shhyang/fountain_operators", features = ["simd"] }</code>.
-      Enable the <code>simd</code> feature for AVX2 (x86_64) or NEON (aarch64) kernel dispatch.
-    </p>
 
     <h3>Schemes</h3>
     <ul>
       <li>
-        <strong>fountain_scheme</strong> — Configurable fountain code schemes on <code>fountain_engine</code><br>
-        <a href="https://docs.rs/fountain_scheme">docs.rs</a> ·
+        <strong>fountain_scheme</strong> — Configurable schemes (LT, LDPC-LT, HDPC-LT, systematic) on <code>fountain_engine</code><br>
         <a href="https://crates.io/crates/fountain_scheme">Crates.io</a> ·
         <a href="https://github.com/shhyang/fountain_scheme">GitHub</a>
       </li>
       <li>
         <strong>fountain_raptor_q</strong> — RFC 6330 RaptorQ scheme on <code>fountain_engine</code><br>
-        <a href="https://docs.rs/fountain_raptor_q">docs.rs</a> ·
         <a href="https://crates.io/crates/fountain_raptor_q">Crates.io</a> ·
         <a href="https://github.com/wutongabc/fountain_raptor_q">GitHub</a>
       </li>
       <li>
         <strong>fountain_raptor_10</strong> — RFC 5053 Raptor-10 scheme on <code>fountain_engine</code><br>
-        <a href="https://docs.rs/fountain_raptor_10">docs.rs</a> ·
         <a href="https://crates.io/crates/fountain_raptor_10">Crates.io</a> ·
         <a href="https://github.com/wutongabc/fountain_raptor_10">GitHub</a>
       </li>
     </ul>
 
+    <h3>Transfer</h3>
+    <ul>
+      <li>
+        <strong>fountain_transfer</strong> — CLI Rateless UDP file transfer.<br>
+        <a href="https://github.com/shhyang/fountain_transfer">GitHub</a>
+        · <a href="https://github.com/shhyang/fountain_transfer#quick-start">README</a>
+      </li>
+    </ul>
+
     <h3>More</h3>
 
-    <p>Additional tooling (transport, profiling, etc.) may appear as the ecosystem evolves.</p>
+    <p>Additional tooling (profiling, multicast transport, etc.) may appear as the ecosystem evolves.</p>
 
     <h2>Project Documentation</h2>
     <p>
